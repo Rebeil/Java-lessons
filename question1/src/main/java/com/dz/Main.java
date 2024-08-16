@@ -3,7 +3,6 @@ package com.dz;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 import ru.pflb.mq.dummy.exception.DummyException;
 import ru.pflb.mq.dummy.implementation.*;
 import ru.pflb.mq.dummy.interfaces.*;
@@ -26,8 +25,7 @@ public class Main {
             String s[] = {"Четыре", "Пять", "Шесть"};
 
             Collections.addAll(list, s);
-
-
+            
             // System.out.println(list);+ " " + str
             for (String str : list) {
                 producer.send(str);
@@ -38,19 +36,12 @@ public class Main {
                 }
             }
 
-
         }catch (DummyException e) {
             throw new RuntimeException(e);
         }
 
-
-
-
-
         session.close();
         conn.close();
-
-
 
     }
 }
